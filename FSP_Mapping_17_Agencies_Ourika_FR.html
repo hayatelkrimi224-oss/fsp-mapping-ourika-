@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_772baf50658ef0fce806e6a25e32e355 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+<style>
+#agency-panel {
+ position: fixed; top: 12px; right: 12px; z-index: 9999;
+ width: 340px; max-height: calc(100vh - 24px); overflow-y: auto;
+ background: white; border-radius: 10px; box-shadow: 0 2px 14px rgba(0,0,0,.25);
+ padding: 14px; font-family: Arial, sans-serif; direction: ltr;
+}
+#agency-panel h3 { margin:0 0 8px; font-size:18px; }
+#agency-panel .note { font-size:12px; color:#555; margin-bottom:10px; line-height:1.5; }
+.agency { border-top:1px solid #eee; padding:9px 0; display:flex; gap:8px; justify-content:space-between; align-items:center; }
+.agency b { font-size:13px; }
+.agency .area { display:block; color:#777; font-size:11px; margin-top:2px; }
+.agency a { white-space:nowrap; font-size:11px; text-decoration:none; padding:5px 7px; border:1px solid #bbb; border-radius:6px; color:#222; }
+@media (max-width: 700px) {
+ #agency-panel { width: calc(100vw - 24px); top: 8px; right: 8px; max-height: 45vh; }
+}
+</style>
+<div id="agency-panel">
+  <h3>Cartographie FSP — 17 agences</h3>
+  <div class="note">
+    Les 17 liens Google Maps proviennent des liens fournis. Cliquez sur « Ouvrir Google Maps » pour accéder à l'emplacement exact de chaque agence.
+  </div>
+  <div class='agency'><div><b>1. Cash Plus 1</b><span class='area'>Setti Fadma</span></div><a href='https://maps.app.goo.gl/93gq7adXUnPeZbrF7' target='_blank'>Ouvrir Google Maps</a></div><div class='agency'><div><b>2. Cash Plus 2</b><span class='area'>Setti Fadma</span></div><a href='https://maps.app.goo.gl/479B38uC1Pfcj7fv5' target='_blank'>Ouvrir Google Maps</a></div><div class='agency'><div><b>3. Cash Plus 3</b><span class='area'>Setti Fadma</span></div><a href='https://maps.app.goo.gl/Qj5zf2cHGa6PZfg68' target='_blank'>Ouvrir Google Maps</a></div><div class='agency'><div><b>4. Cash Plus 4</b><span class='area'>Setti Fadma</span></div><a href='https://maps.app.goo.gl/77ib1j6jdsuqGAu4A' target='_blank'>Ouvrir Google Maps</a></div><div class='agency'><div><b>5. Barid Cash 1</b><span class='area'>Tnin Ourika</span></div><a href='https://maps.app.goo.gl/K3Eq1HwN22suEHJh7' target='_blank'>Ouvrir Google Maps</a></div><div class='agency'><div><b>6. Barid Cash 2</b><span class='area'>Tnin Ourika</span></div><a href='https://maps.app.goo.gl/zaXuYhF9wU1fcQ9A9' target='_blank'>Ouvrir Google Maps</a></div><div class='agency'><div><b>7. Cash Plus 1</b><span class='area'>Tnin Ourika</span></div><a href='https://maps.app.goo.gl/vSDnpbeSYQV9Uq3k9' target='_blank'>Ouvrir Google Maps</a></div><div class='agency'><div><b>8. Cash Plus 2</b><span class='area'>Tnin Ourika</span></div><a href='https://maps.app.goo.gl/6ByXXYeGzzwiBFht6' target='_blank'>Ouvrir Google Maps</a></div><div class='agency'><div><b>9. Cash Plus 3</b><span class='area'>Tnin Ourika</span></div><a href='https://maps.app.goo.gl/PFb8FM4SVXybW8wBA' target='_blank'>Ouvrir Google Maps</a></div><div class='agency'><div><b>10. Cash Plus 4</b><span class='area'>Tnin Ourika</span></div><a href='https://maps.app.goo.gl/Sr52msGYAcWLicGV6' target='_blank'>Ouvrir Google Maps</a></div><div class='agency'><div><b>11. Wafa Cash</b><span class='area'>Tnin Ourika</span></div><a href='https://maps.app.goo.gl/rKwttssAeNGPvTSg7' target='_blank'>Ouvrir Google Maps</a></div><div class='agency'><div><b>12. Lana Cash</b><span class='area'>Tnin Ourika</span></div><a href='https://maps.app.goo.gl/KimKRkExGrDu4hxw7' target='_blank'>Ouvrir Google Maps</a></div><div class='agency'><div><b>13. Wafa Cash</b><span class='area'>Laagrab</span></div><a href='https://maps.app.goo.gl/vLfJGHW224rUGrH47' target='_blank'>Ouvrir Google Maps</a></div><div class='agency'><div><b>14. Cash Plus 1</b><span class='area'>Laagrab</span></div><a href='https://maps.app.goo.gl/YiBZCVqcEMmVn43DA' target='_blank'>Ouvrir Google Maps</a></div><div class='agency'><div><b>15. Damane Cash</b><span class='area'>Laagrab</span></div><a href='https://maps.app.goo.gl/xENwnvjxbzQA59ov8' target='_blank'>Ouvrir Google Maps</a></div><div class='agency'><div><b>16. Cash Plus 2</b><span class='area'>Laagrab</span></div><a href='https://maps.app.goo.gl/3e9LvL8D8BqgHr2p6' target='_blank'>Ouvrir Google Maps</a></div><div class='agency'><div><b>17. Cash Plus 3</b><span class='area'>Laagrab</span></div><a href='https://maps.app.goo.gl/9kQF1XH7NgdQPjfx7' target='_blank'>Ouvrir Google Maps</a></div>
+</div>
+    
+            <div class="folium-map" id="map_772baf50658ef0fce806e6a25e32e355" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_772baf50658ef0fce806e6a25e32e355 = L.map(
+                "map_772baf50658ef0fce806e6a25e32e355",
+                {
+                    center: [31.34, -7.75],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 11,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+            L.control.scale().addTo(map_772baf50658ef0fce806e6a25e32e355);
+
+            
+
+        
+    
+            var tile_layer_5970341c93cb353fd5a3ef65347e2424 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_5970341c93cb353fd5a3ef65347e2424.addTo(map_772baf50658ef0fce806e6a25e32e355);
+        
+    
+            var marker_0e3ee326b7b3911961ee0889f781bf85 = L.marker(
+                [31.3711647, -7.7982062],
+                {
+}
+            ).addTo(map_772baf50658ef0fce806e6a25e32e355);
+        
+    
+        var popup_30008934886a3e48a5ec74f2966c3e73 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_b216e5694153ccd2bf2791f3f3a7cd4c = $(`<div id="html_b216e5694153ccd2bf2791f3f3a7cd4c" style="width: 100.0%; height: 100.0%;"><b>5. Barid Cash 1</b><br>Tnin Ourika<br><br><a href='https://maps.app.goo.gl/K3Eq1HwN22suEHJh7' target='_blank'>Ouvrir l'emplacement exact dans Google Maps</a></div>`)[0];
+                popup_30008934886a3e48a5ec74f2966c3e73.setContent(html_b216e5694153ccd2bf2791f3f3a7cd4c);
+            
+        
+
+        marker_0e3ee326b7b3911961ee0889f781bf85.bindPopup(popup_30008934886a3e48a5ec74f2966c3e73)
+        ;
+
+        
+    
+    
+            marker_0e3ee326b7b3911961ee0889f781bf85.bindTooltip(
+                `<div>
+                     5. Barid Cash 1 — Tnin Ourika
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_9fc1ed94bb1af8ffa872f866815b4e64 = L.marker(
+                [31.373594, -7.783531],
+                {
+}
+            ).addTo(map_772baf50658ef0fce806e6a25e32e355);
+        
+    
+        var popup_6a653d86ecc860ffa2912eac5e1dc79d = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_c4e570fb1dfa93dadf09418b2779e3d2 = $(`<div id="html_c4e570fb1dfa93dadf09418b2779e3d2" style="width: 100.0%; height: 100.0%;"><b>7. Cash Plus 1</b><br>Tnin Ourika<br><br><a href='https://maps.app.goo.gl/vSDnpbeSYQV9Uq3k9' target='_blank'>Ouvrir l'emplacement exact dans Google Maps</a></div>`)[0];
+                popup_6a653d86ecc860ffa2912eac5e1dc79d.setContent(html_c4e570fb1dfa93dadf09418b2779e3d2);
+            
+        
+
+        marker_9fc1ed94bb1af8ffa872f866815b4e64.bindPopup(popup_6a653d86ecc860ffa2912eac5e1dc79d)
+        ;
+
+        
+    
+    
+            marker_9fc1ed94bb1af8ffa872f866815b4e64.bindTooltip(
+                `<div>
+                     7. Cash Plus 1 — Tnin Ourika
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_5ca21d690970d95fbc0bd264aa1cb50e = L.marker(
+                [31.37399, -7.793486],
+                {
+}
+            ).addTo(map_772baf50658ef0fce806e6a25e32e355);
+        
+    
+        var popup_f4c41a550dd09c6c3efd6fbc9077a5b1 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_5b1d718014885ac0ed6e6253f55723ba = $(`<div id="html_5b1d718014885ac0ed6e6253f55723ba" style="width: 100.0%; height: 100.0%;"><b>8. Cash Plus 2</b><br>Tnin Ourika<br><br><a href='https://maps.app.goo.gl/6ByXXYeGzzwiBFht6' target='_blank'>Ouvrir l'emplacement exact dans Google Maps</a></div>`)[0];
+                popup_f4c41a550dd09c6c3efd6fbc9077a5b1.setContent(html_5b1d718014885ac0ed6e6253f55723ba);
+            
+        
+
+        marker_5ca21d690970d95fbc0bd264aa1cb50e.bindPopup(popup_f4c41a550dd09c6c3efd6fbc9077a5b1)
+        ;
+
+        
+    
+    
+            marker_5ca21d690970d95fbc0bd264aa1cb50e.bindTooltip(
+                `<div>
+                     8. Cash Plus 2 — Tnin Ourika
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_0b3e8d3edf2e71caa1049343fb2fb12b = L.marker(
+                [31.3793947, -7.8075631],
+                {
+}
+            ).addTo(map_772baf50658ef0fce806e6a25e32e355);
+        
+    
+        var popup_af3db37b508af9f3d46e745c7487381b = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_153a689d436dcbcacdd70839d9215ffc = $(`<div id="html_153a689d436dcbcacdd70839d9215ffc" style="width: 100.0%; height: 100.0%;"><b>13. Wafa Cash</b><br>Laagrab<br><br><a href='https://maps.app.goo.gl/vLfJGHW224rUGrH47' target='_blank'>Ouvrir l'emplacement exact dans Google Maps</a></div>`)[0];
+                popup_af3db37b508af9f3d46e745c7487381b.setContent(html_153a689d436dcbcacdd70839d9215ffc);
+            
+        
+
+        marker_0b3e8d3edf2e71caa1049343fb2fb12b.bindPopup(popup_af3db37b508af9f3d46e745c7487381b)
+        ;
+
+        
+    
+    
+            marker_0b3e8d3edf2e71caa1049343fb2fb12b.bindTooltip(
+                `<div>
+                     13. Wafa Cash — Laagrab
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_08c4b538bb3121260787868c1d104439 = L.marker(
+                [31.3765625, -7.804109375],
+                {
+}
+            ).addTo(map_772baf50658ef0fce806e6a25e32e355);
+        
+    
+        var popup_61d83435c7f968982f8996c88a116845 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_4c93cf8cf2fa84ad673b44f50096446d = $(`<div id="html_4c93cf8cf2fa84ad673b44f50096446d" style="width: 100.0%; height: 100.0%;"><b>14. Cash Plus 1</b><br>Laagrab<br><br><a href='https://maps.app.goo.gl/YiBZCVqcEMmVn43DA' target='_blank'>Ouvrir l'emplacement exact dans Google Maps</a></div>`)[0];
+                popup_61d83435c7f968982f8996c88a116845.setContent(html_4c93cf8cf2fa84ad673b44f50096446d);
+            
+        
+
+        marker_08c4b538bb3121260787868c1d104439.bindPopup(popup_61d83435c7f968982f8996c88a116845)
+        ;
+
+        
+    
+    
+            marker_08c4b538bb3121260787868c1d104439.bindTooltip(
+                `<div>
+                     14. Cash Plus 1 — Laagrab
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_3b9c3a4839537e78f7eb9ce970bf461e = L.marker(
+                [31.3797543, -7.8077384],
+                {
+}
+            ).addTo(map_772baf50658ef0fce806e6a25e32e355);
+        
+    
+        var popup_bebbdf37234f1e517529377dc8ad4f0e = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_f8f958c49b83af88a1815863ecda3849 = $(`<div id="html_f8f958c49b83af88a1815863ecda3849" style="width: 100.0%; height: 100.0%;"><b>15. Damane Cash</b><br>Laagrab<br><br><a href='https://maps.app.goo.gl/xENwnvjxbzQA59ov8' target='_blank'>Ouvrir l'emplacement exact dans Google Maps</a></div>`)[0];
+                popup_bebbdf37234f1e517529377dc8ad4f0e.setContent(html_f8f958c49b83af88a1815863ecda3849);
+            
+        
+
+        marker_3b9c3a4839537e78f7eb9ce970bf461e.bindPopup(popup_bebbdf37234f1e517529377dc8ad4f0e)
+        ;
+
+        
+    
+    
+            marker_3b9c3a4839537e78f7eb9ce970bf461e.bindTooltip(
+                `<div>
+                     15. Damane Cash — Laagrab
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_95d5992ddc3ca1c74d21bbbe3dcb1dcc = L.marker(
+                [31.3849985, -7.8118597],
+                {
+}
+            ).addTo(map_772baf50658ef0fce806e6a25e32e355);
+        
+    
+        var popup_8384635fabd10c13a61641e88d5410a7 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_f687cae39834d013c421e2681a247e57 = $(`<div id="html_f687cae39834d013c421e2681a247e57" style="width: 100.0%; height: 100.0%;"><b>16. Cash Plus 2</b><br>Laagrab<br><br><a href='https://maps.app.goo.gl/3e9LvL8D8BqgHr2p6' target='_blank'>Ouvrir l'emplacement exact dans Google Maps</a></div>`)[0];
+                popup_8384635fabd10c13a61641e88d5410a7.setContent(html_f687cae39834d013c421e2681a247e57);
+            
+        
+
+        marker_95d5992ddc3ca1c74d21bbbe3dcb1dcc.bindPopup(popup_8384635fabd10c13a61641e88d5410a7)
+        ;
+
+        
+    
+    
+            marker_95d5992ddc3ca1c74d21bbbe3dcb1dcc.bindTooltip(
+                `<div>
+                     16. Cash Plus 2 — Laagrab
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_12eda544ec6667f7c12a36aa2a630333 = L.marker(
+                [31.37399, -7.793486],
+                {
+}
+            ).addTo(map_772baf50658ef0fce806e6a25e32e355);
+        
+    
+        var popup_0f30c2fb50977f67eea68eb7bdbd7562 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_6631041de83270296a1737bb5bf028a0 = $(`<div id="html_6631041de83270296a1737bb5bf028a0" style="width: 100.0%; height: 100.0%;"><b>17. Cash Plus 3</b><br>Laagrab<br><br><a href='https://maps.app.goo.gl/9kQF1XH7NgdQPjfx7' target='_blank'>Ouvrir l'emplacement exact dans Google Maps</a></div>`)[0];
+                popup_0f30c2fb50977f67eea68eb7bdbd7562.setContent(html_6631041de83270296a1737bb5bf028a0);
+            
+        
+
+        marker_12eda544ec6667f7c12a36aa2a630333.bindPopup(popup_0f30c2fb50977f67eea68eb7bdbd7562)
+        ;
+
+        
+    
+    
+            marker_12eda544ec6667f7c12a36aa2a630333.bindTooltip(
+                `<div>
+                     17. Cash Plus 3 — Laagrab
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+</script>
+</html>
